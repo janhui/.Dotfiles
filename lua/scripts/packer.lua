@@ -36,12 +36,25 @@ use {
     {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
-
-    use({
-      'j-hui/fidget.nvim',
+use({
+  'marcuscaisey/please.nvim',
+  requires = {
+    'nvim-treesitter/nvim-treesitter',
+    'mfussenegger/nvim-dap',
+  },
+})
+--    use({
+--      'j-hui/fidget.nvim',
+--      config = function()
+--        require('fidget').setup()
+--      end,
+--      tag = 'legacy',
+--    }) 
+     use({
+      'catppuccin/nvim',
       config = function()
-        require('fidget').setup()
-      end,
-      tag = 'legacy',
+        require('catppuccin')
+      end
     })
+
 end)
