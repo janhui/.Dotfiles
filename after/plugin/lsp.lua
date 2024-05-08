@@ -124,9 +124,7 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-vim.keymap.set('n', '<leader>fm', function()
-  vim.lsp.buf.format({ timeout_ms = 5000 })
-end)
+
 vim.keymap.set('n', '<c-s>', telescope_builtin.lsp_document_symbols)
 vim.keymap.set('n', '<leader>ss', telescope_builtin.lsp_dynamic_workspace_symbols)
 vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions)
