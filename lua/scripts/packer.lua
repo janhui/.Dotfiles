@@ -36,6 +36,8 @@ use {
     {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
+
+  use {'kosayoda/nvim-lightbulb'}
 use({
   'marcuscaisey/please.nvim',
   requires = {
@@ -43,13 +45,14 @@ use({
     'mfussenegger/nvim-dap',
   },
 })
---    use({
---      'j-hui/fidget.nvim',
---      config = function()
---        require('fidget').setup()
---      end,
---      tag = 'legacy',
---    }) 
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+    use({
+      'j-hui/fidget.nvim',
+      tag = 'legacy'
+    }) 
      use({
       'catppuccin/nvim',
       config = function()
