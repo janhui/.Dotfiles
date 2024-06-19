@@ -133,5 +133,6 @@ vim.keymap.set('n', 'gr', function()
     jump_type = 'never',
    })
 end)
+vim.keymap.set('n', 'gi', telescope_builtin.lsp_implementations)
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)

@@ -37,6 +37,8 @@ use {
   }
 }
 
+
+    use({ 'saadparwaiz1/cmp_luasnip', requires = { 'hrsh7th/nvim-cmp', 'L3MON4D3/LuaSnip' } })
   use {'kosayoda/nvim-lightbulb'}
 use({
   'marcuscaisey/please.nvim',
@@ -50,8 +52,7 @@ use {
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
     use({
-      'j-hui/fidget.nvim',
-      tag = 'legacy'
+      'j-hui/fidget.nvim'
     }) 
      use({
       'catppuccin/nvim',

@@ -2,23 +2,31 @@ local ok, cmp = pcall(require, 'cmp')
 if not ok then
   return
 end
-
+local ok, luasnip = pcall(require, 'luasnip')
+if not ok then
+  return
+end
 local source_name_to_menu = {
   nvim_lsp = '[LSP]',
   buffer = '[BUFFER]',
+  luasnip = '[SNIP]',
 }
 
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'luasnip' },
   },
+  
   mapping = cmp.mapping.preset.insert({
-	  ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-          }),
+    ['<c-space>'] = cmp.mapping.complete(),
   }),
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
   ---@diagnostic disable-next-line: missing-fields
   sorting = {
     comparators = {
