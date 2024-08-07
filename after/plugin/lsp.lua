@@ -124,7 +124,7 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-
+vim.keymap.set({ 'n', 'v' }, '<leader>ga', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<c-s>', telescope_builtin.lsp_document_symbols)
 vim.keymap.set('n', '<leader>ss', telescope_builtin.lsp_dynamic_workspace_symbols)
 vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions)
@@ -133,5 +133,6 @@ vim.keymap.set('n', 'gr', function()
     jump_type = 'never',
    })
 end)
+vim.keymap.set('n', 'gi', telescope_builtin.lsp_implementations)
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
