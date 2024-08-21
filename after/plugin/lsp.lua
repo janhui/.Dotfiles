@@ -136,3 +136,8 @@ end)
 vim.keymap.set('n', 'gi', telescope_builtin.lsp_implementations)
 
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+
+vim.keymap.set('n', 'gl', vim.lsp.codelens.run, { desc = 'vim.lsp.codelens.run()' })
+vim.keymap.set('n', '<leader>gf', function()
+  vim.lsp.buf.format({ timeout_ms = 5000 })
+end, { desc = 'vim.lsp.buf.format()' })
