@@ -4,4 +4,3 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 20
 vim.opt.updatetime = 50
-vim.o.clipboard = 'unnamed'
