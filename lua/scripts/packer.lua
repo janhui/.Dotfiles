@@ -2,18 +2,22 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use {'wbthomason/packer.nvim'}
 
   -- Simple plugins can be specified as strings
-  use 'rstacruz/vim-closer'
+  use {'rstacruz/vim-closer'}
   
   -- fzf files
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', 
+    tag = '0.1.2',
+     -- or , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  
+  use({ 'nvim-treesitter/nvim-treesitter' })
+  use({ 'nvim-treesitter/nvim-treesitter-textobjects', requires = { 'nvim-treesitter/nvim-treesitter' } })
+  use({ 'nvim-treesitter/nvim-treesitter-context' })
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
 
@@ -59,6 +63,7 @@ return require('packer').startup(function(use)
   })
   use ({'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
   use({'stevearc/dressing.nvim'})
-  use({ 'lewis6991/gitsigns.nvim' })
+  use({'lewis6991/gitsigns.nvim'})
+  use({ 'folke/which-key.nvim'})
 
 end)
