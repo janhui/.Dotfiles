@@ -50,3 +50,4 @@ vim.keymap.set('n', '<leader>gc', function()
     vim.cmd.cfirst()
   end)
 end, { desc = 'gitsigns.setqflist()' })
+
