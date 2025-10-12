@@ -37,9 +37,6 @@ vim.keymap.set('n', '<leader>hr', actions.reset_hunk, { desc = 'gitsigns.actions
 vim.keymap.set('v', '<leader>hr', function()
   actions.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
 end, { desc = 'gitsigns.actions.reset_hunk()' })
-<<<<<<< HEAD
-vim.keymap.set('n', '<leader>hR', actions.reset_buffer, { desc = 'gitsigns.actions.reset_buffer()' })
-vim.keymap.set('n', '<leader>hp', actions.preview_hunk_inline, { desc = 'gitsigns.actions.preview_hunk_inline()' })
 vim.keymap.set('n', '<leader>gc', function()
   gitsigns.setqflist('all', { open = false }, function()
     if #vim.fn.getqflist() == 0 then
@@ -51,23 +48,3 @@ vim.keymap.set('n', '<leader>gc', function()
     vim.cmd.cfirst()
   end)
 end, { desc = 'gitsigns.setqflist()' })
-
-||||||| parent of 6b6f103 (remove gitsigns change)
-vim.keymap.set('n', '<Leader>hR', actions.reset_buffer, { desc = 'gitsigns.actions.reset_buffer()' })
-vim.keymap.set('n', '<Leader>hp', actions.preview_hunk_inline, { desc = 'gitsigns.actions.preview_hunk_inline()' })
-
-=======
-vim.keymap.set('n', '<leader>hR', actions.reset_buffer, { desc = 'gitsigns.actions.reset_buffer()' })
-vim.keymap.set('n', '<leader>hp', actions.preview_hunk_inline, { desc = 'gitsigns.actions.preview_hunk_inline()' })
-vim.keymap.set('n', '<leader>gc', function()
-  gitsigns.setqflist('all', { open = false }, function()
-    if #vim.fn.getqflist() == 0 then
-      vim.notify('No Git changes', vim.log.levels.INFO)
-      vim.cmd.cclose()
-      return
-    end
-    vim.cmd.copen()
-    vim.cmd.cfirst()
-  end)
-end, { desc = 'gitsigns.setqflist()' })
->>>>>>> 6b6f103 (remove gitsigns change)
