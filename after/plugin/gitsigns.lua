@@ -37,8 +37,6 @@ vim.keymap.set('n', '<leader>hr', actions.reset_hunk, { desc = 'gitsigns.actions
 vim.keymap.set('v', '<leader>hr', function()
   actions.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
 end, { desc = 'gitsigns.actions.reset_hunk()' })
-vim.keymap.set('n', '<leader>hR', actions.reset_buffer, { desc = 'gitsigns.actions.reset_buffer()' })
-vim.keymap.set('n', '<leader>hp', actions.preview_hunk_inline, { desc = 'gitsigns.actions.preview_hunk_inline()' })
 vim.keymap.set('n', '<leader>gc', function()
   gitsigns.setqflist('all', { open = false }, function()
     if #vim.fn.getqflist() == 0 then

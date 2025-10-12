@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
 
   -- Simple plugins can be specified as strings
   use {'rstacruz/vim-closer'}
-  
+
   -- fzf files
   use {
     'nvim-telescope/telescope.nvim', 
@@ -14,8 +14,7 @@ return require('packer').startup(function(use)
      -- or , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
-  use({ 'nvim-treesitter/nvim-treesitter' })
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use({ 'nvim-treesitter/nvim-treesitter-textobjects', requires = { 'nvim-treesitter/nvim-treesitter' } })
   use({ 'nvim-treesitter/nvim-treesitter-context' })
   use('theprimeagen/harpoon')
@@ -54,7 +53,7 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-  use({'j-hui/fidget.nvim'}) 
+  use({'j-hui/fidget.nvim'})
   use({
     'catppuccin/nvim',
     config = function()
@@ -65,5 +64,13 @@ return require('packer').startup(function(use)
   use({'stevearc/dressing.nvim'})
   use({'lewis6991/gitsigns.nvim'})
   use({ 'folke/which-key.nvim'})
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
+  }
+  use({'m4xshen/hardtime.nvim', requires = {'MunifTanjim/nui.nvim'}})
 
 end)
